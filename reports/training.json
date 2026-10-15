@@ -1,0 +1,191 @@
+{
+  "selected_model": "logistic",
+  "selection_rule": "minimum validation three-action cost",
+  "created_at": "2026-09-07T20:43:47.535449+00:00",
+  "data_sha256": "8cd9c99b252f234095ef12b66684dcb9c0c06f6274a7bd956968cdbecd9f2dbe",
+  "settings": {
+    "seed": 42,
+    "rows": 30000,
+    "customers": 600,
+    "train_fraction": 0.6,
+    "validation_fraction": 0.2,
+    "calibration_fraction": 0.2,
+    "fraud_cost": 500.0,
+    "review_cost": 5.0,
+    "false_decline_cost": 100.0,
+    "review_miss_rate": 0.1,
+    "threshold_steps": 101,
+    "default_review_threshold": 0.05,
+    "default_decline_threshold": 0.8,
+    "psi_alert": 0.2,
+    "missing_alert": 0.05,
+    "volume_alert": 0.3,
+    "latency_alert_ms": 100.0,
+    "max_batch_size": 100,
+    "model_version": "1.1.0",
+    "logistic_C": 1.0,
+    "xgboost": {
+      "n_estimators": 180,
+      "max_depth": 3,
+      "learning_rate": 0.05,
+      "subsample": 0.9,
+      "colsample_bytree": 0.9,
+      "min_child_weight": 10,
+      "reg_lambda": 5,
+      "n_jobs": 1,
+      "tree_method": "hist",
+      "eval_metric": "logloss"
+    }
+  },
+  "feature_names": [
+    "log_amount",
+    "amount_ratio",
+    "transactions_10m",
+    "transactions_1h",
+    "spending_velocity",
+    "log_seconds_since_previous",
+    "new_device",
+    "unusual_location",
+    "unusual_hour",
+    "merchant_risk",
+    "category_risk",
+    "log_account_age",
+    "customer_frequency",
+    "amount_deviation",
+    "cross_border",
+    "online_channel"
+  ],
+  "dependencies": {
+    "numpy": "2.2.6",
+    "pandas": "2.3.1",
+    "scikit-learn": "1.7.1",
+    "xgboost": "3.0.4",
+    "joblib": "1.5.1"
+  },
+  "splits": {
+    "train": {
+      "rows": 14400,
+      "fraud_rate": 0.030416666666666668,
+      "start": "2025-01-01T00:00:09.008855733+00:00",
+      "end": "2025-01-11T01:13:09.212143538+00:00"
+    },
+    "calibration": {
+      "rows": 3600,
+      "fraud_rate": 0.0225,
+      "start": "2025-01-11T01:15:01.608812392+00:00",
+      "end": "2025-01-13T11:29:21.202121205+00:00"
+    },
+    "validation": {
+      "rows": 6000,
+      "fraud_rate": 0.021333333333333333,
+      "start": "2025-01-13T11:29:36.698175735+00:00",
+      "end": "2025-01-17T15:40:54.889870972+00:00"
+    },
+    "test": {
+      "rows": 6000,
+      "fraud_rate": 0.0245,
+      "start": "2025-01-17T15:42:12.903146332+00:00",
+      "end": "2025-01-21T20:16:56.646785086+00:00"
+    }
+  },
+  "models": {
+    "logistic": {
+      "validation": {
+        "brier_score": 0.019026813612667788,
+        "log_loss": 0.08329028569220641,
+        "roc_auc": 0.836908740633515,
+        "average_precision": 0.22128568361334244,
+        "precision": 0.06936416184971098,
+        "recall": 0.75,
+        "f1": 0.12698412698412698,
+        "fraud_detection_rate": 0.75,
+        "false_positive_rate": 0.21934604904632152,
+        "confusion_matrix": [
+          [
+            4584,
+            1288
+          ],
+          [
+            32,
+            96
+          ]
+        ]
+      },
+      "policy": {
+        "review_threshold": 0.02,
+        "decline_threshold": 1.0
+      },
+      "validation_action_cost": 27720.0,
+      "uncalibrated_validation": {
+        "brier_score": 0.019052157753456898,
+        "log_loss": 0.08396564740349588,
+        "roc_auc": 0.836908740633515,
+        "average_precision": 0.22128568361334244,
+        "precision": 0.050645007166746296,
+        "recall": 0.828125,
+        "f1": 0.09545249887438091,
+        "fraud_detection_rate": 0.828125,
+        "false_positive_rate": 0.33838555858310626,
+        "confusion_matrix": [
+          [
+            3885,
+            1987
+          ],
+          [
+            22,
+            106
+          ]
+        ]
+      }
+    },
+    "xgboost": {
+      "validation": {
+        "brier_score": 0.017776138783064985,
+        "log_loss": 0.07851788545284684,
+        "roc_auc": 0.8284948697207084,
+        "average_precision": 0.26122695823670794,
+        "precision": 0.04214257581725089,
+        "recall": 0.8359375,
+        "f1": 0.08023997000374954,
+        "fraud_detection_rate": 0.8359375,
+        "false_positive_rate": 0.4141689373297003,
+        "confusion_matrix": [
+          [
+            3440,
+            2432
+          ],
+          [
+            21,
+            107
+          ]
+        ]
+      },
+      "policy": {
+        "review_threshold": 0.01,
+        "decline_threshold": 0.63
+      },
+      "validation_action_cost": 28435.0,
+      "uncalibrated_validation": {
+        "brier_score": 0.017856317668633496,
+        "log_loss": 0.07885405758334475,
+        "roc_auc": 0.8284948697207084,
+        "average_precision": 0.26122695823670794,
+        "precision": 0.03577235772357724,
+        "recall": 0.859375,
+        "f1": 0.06868560724320949,
+        "fraud_detection_rate": 0.859375,
+        "false_positive_rate": 0.5049386920980926,
+        "confusion_matrix": [
+          [
+            2907,
+            2965
+          ],
+          [
+            18,
+            110
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "transaction_id": "TXN-0029999",
+  "customer_id": "CUS-0048",
+  "timestamp": "2025-01-21T20:16:56.646785Z",
+  "transaction_amount": 96.71,
+  "merchant_id": "MER-064",
+  "merchant_category": "electronics",
+  "payment_channel": "pos",
+  "country": "US",
+  "home_country": "US",
+  "device_id": "DEV-48-0",
+  "ip_country": "US",
+  "account_age_days": 1081,
+  "historical_avg_amount": 146.74932203389832,
+  "historical_std_amount": 185.60394421459617,
+  "prior_transaction_count": 59,
+  "transactions_10m": 0,
+  "transactions_1h": 0,
+  "spend_1h": 0.0,
+  "seconds_since_previous": 10922.849296589615,
+  "new_device": false,
+  "merchant_risk": 0.679399335311584
+}

@@ -1,0 +1,27 @@
+{
+  "scored": 1,
+  "labeled": 1,
+  "coverage": 1.0,
+  "threshold": 0.02,
+  "metrics": {
+    "brier_score": 0.00010142687867531038,
+    "log_loss": 0.01012214776078009,
+    "roc_auc": null,
+    "average_precision": null,
+    "precision": 0.0,
+    "recall": 0.0,
+    "f1": 0.0,
+    "fraud_detection_rate": 0.0,
+    "false_positive_rate": 0.0,
+    "confusion_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  }
+}

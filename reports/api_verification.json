@@ -1,0 +1,6 @@
+{
+  "requests": 30,
+  "p50_ms": 10.496,
+  "p95_ms": 16.651099999999996,
+  "scope": "feature transformation, model prediction and explanation; excludes HTTP"
+}

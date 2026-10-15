@@ -1,0 +1,25 @@
+{
+  "image": "riskshield-ml:1.1",
+  "image_id": "sha256:be88b7578397d8c9427bc4d7a0d7f0e8e506f8ba52a40c16f8ccbab0ff720f5c",
+  "health": "healthy",
+  "runtime_uid": "1000",
+  "unauthenticated_status": 401,
+  "scoring_status": 200,
+  "conflict_status": 409,
+  "restart_preserved_response": true,
+  "label_ingestion": "passed",
+  "batch": "passed",
+  "response": {
+    "transaction_id": "TXN-0029999",
+    "fraud_probability": 0.010071091235576774,
+    "risk_band": "LOW",
+    "decision": "APPROVE",
+    "reason_codes": [
+      "MERCHANT_RISK_SIGNAL",
+      "TRANSACTION_AMOUNT_SIGNAL",
+      "MERCHANT_CATEGORY_SIGNAL"
+    ],
+    "model_version": "1.1.0",
+    "scoring_latency_ms": 52.925
+  }
+}

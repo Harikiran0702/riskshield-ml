@@ -1,0 +1,13 @@
+{
+  "transaction_id": "TXN-0029999",
+  "fraud_probability": 0.010071091235576755,
+  "risk_band": "LOW",
+  "decision": "APPROVE",
+  "reason_codes": [
+    "MERCHANT_RISK_SIGNAL",
+    "TRANSACTION_AMOUNT_SIGNAL",
+    "MERCHANT_CATEGORY_SIGNAL"
+  ],
+  "model_version": "1.1.0",
+  "scoring_latency_ms": 16.265
+}
