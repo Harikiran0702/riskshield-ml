@@ -49,7 +49,7 @@ The report includes label coverage. Missing labels are not treated as legitimate
 
 ## Docker
 
-With the API key configured:
+Run the training commands in the [README](../README.md#training) first: the image requires `artifacts/selected.joblib`. Then, with the API key configured:
 
 ```bash
 docker compose up --build -d

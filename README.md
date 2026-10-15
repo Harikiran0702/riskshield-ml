@@ -18,6 +18,8 @@ The project uses reproducible synthetic data.
 Requires Python 3.12. Commands below use PowerShell.
 
 ```powershell
+git clone https://github.com/Harikiran0702/riskshield-ml.git
+cd riskshield-ml
 py -3.12 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -e ".[dev]"
@@ -26,6 +28,8 @@ python -m pip install -e ".[dev]"
 On Linux or macOS, use `python3.12 -m venv .venv` and `source .venv/bin/activate`.
 
 ## Training
+
+Run these commands before starting the API or building the Docker image. They create the dataset, trained model, and evaluation reports locally.
 
 ```bash
 python scripts/generate_data.py
@@ -94,7 +98,7 @@ ruff format --check .
 
 ## Docker
 
-With `RISKSHIELD_API_KEY` set:
+After training, with `RISKSHIELD_API_KEY` set:
 
 ```bash
 docker compose up --build -d
