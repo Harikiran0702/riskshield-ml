@@ -37,19 +37,22 @@ Models use earlier transactions for training and later transactions for calibrat
 
 ## API
 
-Set an API key through the environment and start the service:
+Generate a key once with `python -c "import secrets; print(secrets.token_urlsafe(32))"`. Use that same key in both terminals below.
+
+In the server terminal:
 
 ```powershell
-$env:RISKSHIELD_API_KEY = python -c "import secrets; print(secrets.token_urlsafe(32))"
+$env:RISKSHIELD_API_KEY = Read-Host "API key"
 uvicorn riskshield.api.main:app --host 127.0.0.1 --port 8000
 ```
 
 Requests require the `X-API-Key` header. Keep keys out of source control. See [configuration](docs/hardening.md) for environment settings and Docker persistence.
 
-Example request, using the same key in the client terminal:
+In a second terminal, from the project directory:
 
 ```powershell
-curl.exe -X POST http://127.0.0.1:8000/score -H "X-API-Key: $env:RISKSHIELD_API_KEY" -H "Content-Type: application/json" --data-binary @data/sample/transaction.json
+$env:RISKSHIELD_API_KEY = Read-Host "API key"
+curl.exe -X POST http://127.0.0.1:8000/score -H "X-API-Key: $env:RISKSHIELD_API_KEY" -H "Content-Type: application/json" --data-binary "@data/sample/transaction.json"
 ```
 
 Responses include `fraud_probability`, `risk_band`, `decision`, `reason_codes`, `model_version`, and `scoring_latency_ms`.
